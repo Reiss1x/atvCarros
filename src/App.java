@@ -6,7 +6,7 @@ public class App {
         Carro basico = new Carro("Basico", TipoCombustivel.GASOLINA, 10, 55);
         Carro esportivo = new Carro("Esportivo", TipoCombustivel.GASOLINA,6,45);
         Carro utilitario = new Carro("Utilitario", TipoCombustivel.DIESEL,8,70);
-
+        Carro suv = new Carro("SUV", TipoCombustivel.FLEX, 8,55);
 
         //Abastecer.
         System.out.println("\nAbastecendo o carro");
@@ -16,6 +16,8 @@ public class App {
         System.out.println(esportivo);
         utilitario.abastece(TipoCombustivel.DIESEL,70);
         System.out.println(utilitario);
+        suv.abastece(TipoCombustivel.FLEX,55);
+        System.out.println(suv);
 
         //Distancia da viagem.
         System.out.println("\nViajando");
@@ -25,6 +27,8 @@ public class App {
         System.out.println(esportivo);
         utilitario.viaja(100);
         System.out.println(utilitario);
+        suv.viaja(100);
+        System.out.println(suv);
 
     }
 }
