@@ -5,12 +5,14 @@ public class Motor {
     private int quilometragem;
     private int consumo1;
     private int consumo2;
+    private boolean econo;
 
-    public Motor(TipoCombustivel tipoMotor, int consumo) {
+    public Motor(TipoCombustivel tipoMotor, int consumo, boolean econo) {
         this.tipoMotor = tipoMotor;
         this.consumo = consumo;
         this.consumo1 = consumo;
         this.consumo2 = consumo;
+        this.econo = true;
     }
 
     public Motor(TipoCombustivel tipoMotor, int consumo1, int consumo2) {
@@ -24,10 +26,10 @@ public class Motor {
     }
 
     public void setConsumo(TipoCombustivel tipo){
-        if(tipo == TipoCombustivel.GASOLINA){
+        if(tipo == TipoCombustivel.GASOLINA && !econo){
             consumo = consumo1;
         }
-        if(tipo == TipoCombustivel.ALCOOL){
+        if(tipo == TipoCombustivel.ALCOOL && !econo){
             consumo = consumo2;
         }
 
@@ -46,7 +48,15 @@ public class Motor {
     }
 
     public void percorre(int distancia) {
-        quilometragem += distancia;
+        if(econo == true){
+            System.out.println("CONSUMO : "+ consumo);
+            quilometragem += distancia;
+            if (quilometragem % 5000 == 0 && consumo > 10){
+            consumo--;
+        }
+        } else{
+            quilometragem += distancia;
+        }   
     }
 
     @Override

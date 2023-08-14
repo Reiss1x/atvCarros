@@ -5,9 +5,16 @@ public class Carro {
     private TanqueCombustivel tanque;
 
     public Carro(String modelo, TipoCombustivel tipoCombustivel, int consumoMotor, int capacidadeTanque) {
-        this.modelo = modelo;
-        motor = new Motor(tipoCombustivel, consumoMotor);
-        tanque = new TanqueCombustivel(tipoCombustivel, capacidadeTanque);
+        if(modelo.equals("Econo")){
+            this.modelo = modelo;
+            motor = new Motor(tipoCombustivel, consumoMotor, true);
+            tanque = new TanqueCombustivel(tipoCombustivel, capacidadeTanque);
+        }
+        else{
+            this.modelo = modelo;
+            motor = new Motor(tipoCombustivel, consumoMotor, false);
+            tanque = new TanqueCombustivel(tipoCombustivel, capacidadeTanque);
+        }
     }
 
     public Carro(String modelo, TipoCombustivel tipoCombustivel, int consumoMotor, int consumoMotor2, int capacidadeTanque) {

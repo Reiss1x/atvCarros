@@ -8,6 +8,8 @@ public class App {
         Carro utilitario = new Carro("Utilitario", TipoCombustivel.DIESEL,8,70);
         Carro suv = new Carro("SUV", TipoCombustivel.FLEX, 8,55);
         Carro suvFlex = new Carro("SUVFLEX", TipoCombustivel.FLEX, 8,6, 65);
+        Carro econo = new Carro("Econo", TipoCombustivel.GASOLINA, 20,55);
+
 
 
         //Abastecer.
@@ -22,6 +24,8 @@ public class App {
         System.out.println(suv);
         suvFlex.abastece(TipoCombustivel.ALCOOL, 65);
         System.out.println(suvFlex);
+        econo.abastece(TipoCombustivel.GASOLINA, 55);
+        System.out.println(econo);
 
         //Distancia da viagem.
         System.out.println("\nViajando");
@@ -35,5 +39,15 @@ public class App {
         System.out.println(suv);
         suvFlex.viaja(100);
         System.out.println(suvFlex);
+        econo.viaja(100);
+        System.out.println(econo);
+
+        //teste da quilometragem do econo
+        // for(int x = 1; x<=200; x++){
+        //     econo.abastece(TipoCombustivel.GASOLINA, 55);
+        //     System.out.println(econo);
+        //     econo.viaja(500);
+        //     System.out.println(econo);
+        // }
     }
 }
