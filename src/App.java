@@ -1,6 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
+
+        System.out.println("Teste");
         Carro basico = new Carro("Basico", TipoCombustivel.GASOLINA, 10, 55);
 
         System.out.println("Tipos de veiculos:");
