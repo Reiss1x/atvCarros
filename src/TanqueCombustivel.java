@@ -2,6 +2,7 @@ public class TanqueCombustivel {
 
     private TipoCombustivel tipoCombustivel;
     private int capacidade;
+    private boolean isGas;
     private int combustivelDisponivel;
 
     public TanqueCombustivel(TipoCombustivel tipoCombustivel, int capacidade) {
@@ -37,9 +38,18 @@ public class TanqueCombustivel {
         if (getCombustivelDisponivel() + quantidade > getCapacidade()) {
             return false;
         } else {
+            if(this.tipoCombustivel == TipoCombustivel.GASOLINA){
+                isGas = true;
+            } else {
+                isGas = false;
+            }
             combustivelDisponivel += quantidade;
             return true;
         }
+    }
+
+    public boolean getTipo(){
+        return isGas;
     }
 
     public boolean gasta(int quantidade) {
